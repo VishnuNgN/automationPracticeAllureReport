@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "report:deploy": "gh-pages -d allure-report"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -12,7 +14,8 @@
     "@playwright/test": "^1.58.2",
     "@types/node": "^25.3.0",
     "allure-commandline": "^2.36.0",
-    "allure-playwright": "^3.4.5"
+    "allure-playwright": "^3.4.5",
+    "gh-pages": "^6.3.0"
   },
   "dependencies": {
     "nodemailer": "^8.0.1"
