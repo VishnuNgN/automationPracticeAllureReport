@@ -70,7 +70,7 @@ jobs:
           secure: true
           username: ${{ secrets.GMAIL_USER }}
           password: ${{ secrets.GMAIL_PASS }}
-          subject: "PC-Automation-${{ steps.results.outputs.date }}-${{ steps.results.outputs.percent }}%-Passed"
+          subject: "PC-Automation-${{ steps.results.outputs.date }}-[${{ steps.results.outputs.percent }}%]-Passed"
           body: |
             Allure Report is ready.
 
