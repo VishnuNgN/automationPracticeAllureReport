@@ -12,7 +12,7 @@ permissions:
   contents: write
 
 jobs:
-  UI Automation:
+  test:
     runs-on: ubuntu-latest
 
     steps:
