@@ -90,5 +90,8 @@ jobs:
             You have total ${{steps.results.outputs.total}} cases. Passed ${{ steps.results.outputs.percent }}% and Failed ${{ steps.results.outputs.percentf }}%.
             For more details:- https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
 
+            Thanks & Regards 
+            Vishnu M 
+            
           to: vishnucleago123@gmail.com,nagashreegnckm@gmail.com
           from: ${{ secrets.GMAIL_USER }}
