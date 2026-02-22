@@ -65,7 +65,7 @@ jobs:
 
           DATE=$(date +'%d-%m-%Y')
 
-          echo "percent=$TOTAL" >> $GITHUB_OUTPUT
+          echo "total=$TOTAL" >> $GITHUB_OUTPUT
           echo "percent=$PERCENT" >> $GITHUB_OUTPUT
           echo "date=$DATE" >> $GITHUB_OUTPUT
           echo "percentf=$PERCENTF" >> $GITHUB_OUTPUT
@@ -85,7 +85,7 @@ jobs:
 
             Allure Report is ready.
 
-            You have total ${TOTAL} cases. Passed ${{ steps.results.outputs.percent }}% and Failed ${{ steps.results.outputs.percentf }}%.
+            You have total ${steps.results.outputs.total} cases. Passed ${{ steps.results.outputs.percent }}% and Failed ${{ steps.results.outputs.percentf }}%.
             For more details:- https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
 
           to: vishnucleago123@gmail.com,nagashreegnckm@gmail.com
