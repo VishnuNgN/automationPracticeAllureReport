@@ -14,7 +14,7 @@ const config = ({
 
 use: {
     browserName : 'chromium', // to open the browser 
-    headless : false,
+    headless : true,
      trace: 'on-first-retry',
      reporter : 'html'
   },
