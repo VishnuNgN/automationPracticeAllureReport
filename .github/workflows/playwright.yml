@@ -12,7 +12,7 @@ permissions:
   contents: write
 
 jobs:
-  test:
+  UI Automation:
     runs-on: ubuntu-latest
 
     steps:
@@ -92,6 +92,6 @@ jobs:
 
             Thanks & Regards 
             Vishnu M 
-            
+
           to: vishnucleago123@gmail.com,nagashreegnckm@gmail.com
           from: ${{ secrets.GMAIL_USER }}
