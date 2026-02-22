@@ -49,6 +49,7 @@ jobs:
         run: |
           TOTAL=$(jq '.statistic.total' allure-report/widgets/summary.json)
           PASSED=$(jq '.statistic.passed' allure-report/widgets/summary.json)
+          FAILED=$(jq '.statistic.failed' allure-report/widgets/summary.json)
 
           if [ "$TOTAL" -eq 0 ]; then
             PERCENT=0
@@ -56,10 +57,17 @@ jobs:
             PERCENT=$((PASSED * 100 / TOTAL))
           fi
 
+          if [ "$TOTAL" -eq 0 ]; then
+            PERCENTF=0
+          else
+            PERCENTF=$((FAILED * 100 / TOTAL))
+          fi
+
           DATE=$(date +'%d-%m-%Y')
 
           echo "percent=$PERCENT" >> $GITHUB_OUTPUT
           echo "date=$DATE" >> $GITHUB_OUTPUT
+          echo "percentf=$PERCENTF" >> $GITHUB_OUTPUT
 
       - name: Send Playwright Report Email
         if: always()
@@ -72,10 +80,12 @@ jobs:
           password: ${{ secrets.GMAIL_PASS }}
           subject: "PC-Automation-${{ steps.results.outputs.date }}-[${{ steps.results.outputs.percent }}%]-Passed"
           body: |
+            Hello Team Members, 
+
             Allure Report is ready.
 
-            Passed: ${{ steps.results.outputs.percent }}%
+            You have total ${TOTAL} cases. Passed ${{ steps.results.outputs.percent }}% and Failed ${{ steps.results.outputs.percentf }}%.
+            For more details:- https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
 
-            https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
-          to: vishnucleago123@gmail.com
+          to: vishnucleago123@gmail.com,nagashreegnckm@gmail.com
           from: ${{ secrets.GMAIL_USER }}
