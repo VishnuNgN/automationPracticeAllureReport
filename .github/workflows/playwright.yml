@@ -65,6 +65,7 @@ jobs:
 
           DATE=$(date +'%d-%m-%Y')
 
+          echo "percent=$TOTAL" >> $GITHUB_OUTPUT
           echo "percent=$PERCENT" >> $GITHUB_OUTPUT
           echo "date=$DATE" >> $GITHUB_OUTPUT
           echo "percentf=$PERCENTF" >> $GITHUB_OUTPUT
